@@ -45,16 +45,20 @@ How to initialize it:
  
   end sub
   
-Functions:
-  
-  .Create                 'create Designlistbox
-  .Clear                  'clear all data in the Listbox. 
-  .Fill                   'provide new data. Old data will be deleted
-  .Sort                   'sort data by a column. (Zero based)
-  .SelectRow              'select a certain row. (Zero based and same result as changeing .ListIndex)
-  
-  .RaiseEventBevoreClick  'ignore
-  .RaiseEventClick        'ignore
+Procedures:
+
+|  Procedure |  Effect | Inputs |
+| ------------ | ------------ | ------------ |
+|  .Create    | Creates Designlistbox  | ParentUserForm as UserForm, Top as Long, Left as Long, Height as Long, Width as Long, ArrayWithData | 
+|   .Clear   |   Clears all data in the Listbox.  |  |
+|   .Fill     |   Provides new data. Old data will be deleted  | ArrayWithData  |
+|   .Sort     |   Sorts data by a column. | ColumnNumber as Long (Zero Based), optional Descending as Boolean |
+|   .Clear   |   Clears all data in the Listbox. The Frame is unaffected |  |
+|   .SelectRow   |  Selects a certain row. Same result as changeing .ListIndex |  RowNumber as Long (Zero Based) |
+|    |   |   |  
+|   .RaiseEventBevoreClick  |  Ignore |  |
+|   .RaiseEventClick  |  Ignore |  |
+
     
 Properties:
   
