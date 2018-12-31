@@ -45,7 +45,7 @@ How to initialize it:
  
   end sub
   
-Procedures:
+##Procedures
 
 |  Procedure |  Effect | Inputs |
 | ------------ | ------------ | ------------ |
@@ -55,12 +55,15 @@ Procedures:
 |   .Sort     |   Sorts data by a column. | ColumnNumber as Long (Zero Based), optional Descending as Boolean |
 |   .Clear   |   Clears all data in the Listbox. The Frame is unaffected |  |
 |   .SelectRow   |  Selects a certain row. Same result as changeing .ListIndex |  RowNumber as Long (Zero Based) |
-|    |   |   |  
 |   .RaiseEventBevoreClick  |  Ignore |  |
 |   .RaiseEventClick  |  Ignore |  |
 
     
-Properties:
+##Properties
+
+|  Procedure |  Effect | Inputs |
+| ------------ | ------------ | ------------ |
+|  .Create    | Creates Designlistbox  | ParentUserForm as UserForm, Top as Long, Left as Long, Height as Long, Width as Long, 
   
   .IsEmpty                'returns Boolean if the DesignListBox is empty (Read) 
   .ColumnsCount           'returns Long of the amount of Columns (Read)
