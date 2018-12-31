@@ -45,7 +45,7 @@ How to initialize it:
  
   end sub
   
-##Procedures
+## Procedures
 
 |  Procedure |  Effect | Inputs |
 | ------------ | ------------ | ------------ |
@@ -59,17 +59,20 @@ How to initialize it:
 |   .RaiseEventClick  |  Ignore |  |
 
     
-##Properties
+## Properties
 
-|  Procedure |  Effect | Inputs |
-| ------------ | ------------ | ------------ |
-|  .Create    | Creates Designlistbox  | ParentUserForm as UserForm, Top as Long, Left as Long, Height as Long, Width as Long, 
+|  .IsEmpty  |  Effect | Inputs | Output | Read / Write |
+| ------------ | ------------ | ------------ | ------------ | ------------ |
+|  .IsEmpty | Returns Boolean if the DesignListBox is empty  | | IsEmpty as Boolean | Read |
+|  .ColumnsCount | Returns Long of the amount of Columns  | | ColumnsCount as Long | Read |
+|  .RowsCount | Returns Long of the amount of Rows  | | RowsCount as Long | Read |
+|  .RowHeight | Read / set Height as Long of each Row  | InpHeight as Long | RowHeight as Long | Read  / Write|
+|  .ColumnWidths | Read / set Width as String for each Column | ColumnWidths as String (Notation: "15;20;30;") | ColumnWidths as String | Read  / Write |
+
+
+
   
-  .IsEmpty                'returns Boolean if the DesignListBox is empty (Read) 
-  .ColumnsCount           'returns Long of the amount of Columns (Read)
-  .RowsCount              'returns Long of the amount of Rows (Read)
-  .RowHeight              'read / set Height as Long of each Row (Read, write)
-  .ColumnWidths           'read / set Width as String of each Column. (ColumnWidths Notation: "15;20;30;") (Read, write)
+  .ColumnWidths           'read / set Width as String of each Column. (ColumnWidths as string (Notation: "15;20;30;")) (Read, write)
   .Headers                'read / set Headers as Boolean. (Read, write)
   .AllLabels              'returns all entries as Labels in a collection (Read)
   .RowLabels              'returns all entries of a Row in a collection. (RowNumber as Zero based Long, InludingHeaders as boolean if you want HeaderLabels included) (Read)
