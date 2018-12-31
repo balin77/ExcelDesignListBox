@@ -82,19 +82,20 @@ change the FontStyle or FontSize - basically you can modify every entry like a L
 |  .TrueSelectedValue | Returns the value of the actual Label of the selected Row and the Column defined at .ColumnSource. Columns with ColumnWidth = 0 are ignored. |  | TrueSelectedValue as Variant | Read | 
 |  .SelectionColor | Read / set SelectionColor as Long | ColorNumber as Long | SelectionColor as Long | Read / Write | 
 |  .ListIndex | Read / set ListIndex as Long. (Any Row may be selected with .selectRow too) | RowNumber As Long  (Zero Based) | ListIndex As Long  (Zero Based) | Read / Write | 
-
-
-  .FreezeRows             'read / set the Rows that should stay put when scrolling. (RowsFromTop as Long (not Zero Based))(Read, write)
-  .FreezeColumns          'read / set the Columns that should stay put when scrolling. (ColumnFromLef as Long (not Zero Based))(Read, write)
+|  .FreezeRows | Read / set the Rows that should stay put when scrolling. | RowsFromTop as Long (not Zero Based) | FreezeRows As Long  (not Zero Based) | Read / Write | 
+|  .FreezeColumns | Read / set the Columns that should stay put when scrolling. | ColumnFromLef as Long (not Zero Based) | FreezeColumns As Long  (not Zero Based) | Read / Write | 
   
-Events:
-  
-  _BevoreClick            'Fires bevore Click has been executed
-  _Click                  'Fires after Click has been executed
-  _Change                 'Fires after .Create or .Fill has been executed
+### Events
+
+|  Event  |  Effect | Inputs | Output | 
+| ------------ | ------------ | ------------ | ------------ | 
+|  DesignListBox_BeforeClick | Fires after user has clicked on the DesignListBox, but before the provoked code executes | |  | 
+|  DesignListBox_Click     | Fires after user has clicked on the DesignListBox and after the provoked code has been executed | |  | 
+|  DesignListBox_Change    | Fires after .Create or .Fill has been executed | |  | 
   
 Well so long my friends. Enjoy the code and create an issue, if you have any problems or improvements
 
 Thank You
-  
+ 
+Raphael Gubler
   
