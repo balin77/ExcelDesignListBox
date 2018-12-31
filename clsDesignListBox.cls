@@ -19,7 +19,7 @@ Attribute pFrame.VB_VarHelpID = -1
 Private pParamDict As New Scripting.Dictionary
 Private pIsEmpty As Boolean
 'Public Events
-Public Event BevoreClick()
+Public Event BeforeClick()
 Public Event Change()
 Public Event Click()
 
@@ -554,9 +554,9 @@ Next Ctrl
 pIsEmpty = True
 
 End Sub
-Public Sub RaiseEventBevoreClick()
+Public Sub RaiseEventBeforeClick()
 
-RaiseEvent BevoreClick
+RaiseEvent BeforeClick
 
 End Sub
 Public Sub RaiseEventClick()

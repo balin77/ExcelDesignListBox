@@ -32,7 +32,7 @@ Private pParent As clsDesignListBox
 
 Private Sub pLabl_Click()
 
-Call pParent.RaiseEventBevoreClick
+Call pParent.RaiseEventBeforeClick
 
 If pLabl.Tag = "Header" Then Exit Sub
 
