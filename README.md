@@ -4,11 +4,11 @@ Excel Vba Listbox for Userforms with customizable .Font
 The DesignListBox allows you to create a fully customizable ListBox in Excel. You may change the colors, make it bold,
 change the FontStyle or FontSize - basically you can modify every entry like a Label. 
 
-How it works: 
+## How it works
 
   On runtime, the clsDesignListBox class creates a Frame on a Userform and in that it stores every value in a Label. 
 
-How to initialize it:
+### How to initialize it
 
   Add the two Class Files - clsDesignListBox and clsDesignListBoxObject - to your VBA project. 
 
@@ -20,32 +20,34 @@ How to initialize it:
   (Params: Userform, Top, Left, Height, Width, ArrayWithData)
   IMPORTANT: 1D ARRAYS ARE NOT SUPPORTED YET
 
-  DesignListBox.Create Me, 6, 6, 330, 534, InputArr
+      DesignListBox.Create Me, 6, 6, 330, 534, InputArr
   
   Change the FontStyle of every Label as an example:
   
-  Dim Labl
-  For Each Labl In pDesignListBox.AllLabels
-      Labl.Font.Name = "Arial Black"
-  Next Labl
+      Dim Labl
+      For Each Labl In pDesignListBox.AllLabels
+          Labl.Font.Name = "Arial Black"
+      Next Labl
   
   Store DesingListBox in a private Variable defined at the top of the Userform Code
   
-  At top:
-  Public WithEvents pDesignListBox As clsDesignListBox
+  #### At top:
   
-  Just after creating it:
-  Set pDesignListBox = DesignListBox
+      Public WithEvents pDesignListBox As clsDesignListBox
+  
+  #### Just after creating it:
+  
+      Set pDesignListBox = DesignListBox
   
   Use Events of the DesignListBox like this:
   
-  Private sub pDesignListBox_Click()
+      Private sub pDesignListBox_Click()
+
+      MsgBox pDesignListBox.SelectedValue
+
+      end sub
   
-  MsgBox pDesignListBox.SelectedValue
- 
-  end sub
-  
-## Procedures
+### Procedures
 
 |  Procedure |  Effect | Inputs |
 | ------------ | ------------ | ------------ |
@@ -59,24 +61,21 @@ How to initialize it:
 |   .RaiseEventClick  |  Ignore |  |
 
     
-## Properties
+### Properties
 
-|  .IsEmpty  |  Effect | Inputs | Output | Read / Write |
+|  Property  |  Effect | Inputs | Output | Read / Write |
 | ------------ | ------------ | ------------ | ------------ | ------------ |
 |  .IsEmpty | Returns Boolean if the DesignListBox is empty  | | IsEmpty as Boolean | Read |
 |  .ColumnsCount | Returns Long of the amount of Columns  | | ColumnsCount as Long | Read |
 |  .RowsCount | Returns Long of the amount of Rows  | | RowsCount as Long | Read |
 |  .RowHeight | Read / set Height as Long of each Row  | InpHeight as Long | RowHeight as Long | Read  / Write|
 |  .ColumnWidths | Read / set Width as String for each Column | ColumnWidths as String (Notation: "15;20;30;") | ColumnWidths as String | Read  / Write |
+|  .Headers | Read / set Headers as Boolean | IsOn as Boolean | IsOn as Boolean | Read  / Write |
+|  .AllLabels | Returns all entries as Labels in a Collection |  | AllLabels as Collection | Read  |
+|  .RowLabels | Returns all entries of a Row in a Collection | RowNumber as Long (Zero Based), InludingHeaders as Boolean (If you want HeaderLabels included)  | RowLabels as Collection | Read  |
+|  .ColumnLabels | Returns all entries of a Column in a Collection | ColumnNumber as Long (Zero Based), InludingHeaders as Boolean (If you want HeaderLabels included)  | RowLabels as Collection | Read  |
+|  .ExactLabel | Returns an exact entry as Object | ColumnNumber as Long (Zero Based), InludingHeaders as Boolean (If you want HeaderLabels included)  | RowLabels as Collection | Read  |
 
-
-
-  
-  .ColumnWidths           'read / set Width as String of each Column. (ColumnWidths as string (Notation: "15;20;30;")) (Read, write)
-  .Headers                'read / set Headers as Boolean. (Read, write)
-  .AllLabels              'returns all entries as Labels in a collection (Read)
-  .RowLabels              'returns all entries of a Row in a collection. (RowNumber as Zero based Long, InludingHeaders as boolean if you want HeaderLabels included) (Read)
-  .ColumnLabels           'returns all entries of a Column in a collection. (ColumnNumber as Zero based Long, InludingHeaders as boolean if you want HeaderLabels included) (Read)
   .ExactLabel             'returns an exact entry as object. (ColumnNumber as Zero based Long, RowNumber as Zero based Long) (Read)
   .HeadersLabels          'returns all HeaderLabels in a collection. (Read)
   .ColumnSource           'read / set ColumnNumber as Long of Column that should return .SelectedValue. Default = 0 (ColumnNumber as Zero based Long) (Read, write)
