@@ -94,7 +94,7 @@ change the FontStyle or FontSize - basically you can modify every entry like a L
 |  DesignListBox_Change    | Fires after .Create or .Fill has been executed | |  | 
 
 
-
+------------
   
 Well so long my friends. Enjoy the code and create an issue, if you have any problems or improvements
 
