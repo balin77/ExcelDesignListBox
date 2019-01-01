@@ -484,6 +484,8 @@ Public Sub Sort(ColumnNumber As Long, Optional Descending As Boolean)
 
 If Not CheckInputColumnNumber(ColumnNumber) Then Exit Sub
 
+Call DeselectAllLabels
+
 'If Headers then remove Arrow Char
 If Me.Headers Then
     Call SortArray(pInpArr, LBound(pInpArr, 1) + 1, , ColumnNumber + GetDeviation("Columns"), Descending)
@@ -1117,7 +1119,7 @@ Next i
 Debug.Print "Result: None"
 
 End Function
-Public Function IsInCollection(Kollection As Collection, Optional Key As Variant, Optional Item As Variant) As Boolean
+Private Function IsInCollection(Kollection As Collection, Optional Key As Variant, Optional Item As Variant) As Boolean
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 'INPUT       : Kollection, the collection we would like to examine
 '            : (Optional) Key, the Key we want to find in the collection
